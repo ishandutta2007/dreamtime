@@ -184,7 +184,7 @@ export const Nudify = {
    *
    * @param {string} url
    */
-  async addUrl(url) {
+  async addUrl(url, downloadOptions = {}) {
     if (!startsWith(url, 'http://') && !startsWith(url, 'https://')) {
       throw new Warning('Upload failed.', 'Please enter a valid web address.')
     }
@@ -200,7 +200,7 @@ export const Nudify = {
     })
 
     try {
-      const file = await File.fromUrl(url)
+      const file = await File.fromUrl(url, {}, downloadOptions)
 
       Swal.close()
 
@@ -255,6 +255,8 @@ export const Nudify = {
 
     // eslint-disable-next-line lodash/prefer-immutable-method
     remove(this.photos, { id: photo.id })
+
+    events.emit('nudify.update')
 
     consola.debug(`Forgotten: ${photo.file.fullname}`)
   },

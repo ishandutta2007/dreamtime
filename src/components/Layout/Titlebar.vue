@@ -134,14 +134,15 @@ export default {
   @apply text-white text-sm font-bold px-6 select-none;
 
   animation-name: logoAnim;
-  animation-timing-function: ease-in-out;
-  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-duration: 15s;
   animation-iteration-count: infinite;
 
   background: rgb(99, 66, 245);
   background: linear-gradient(40deg,
   rgba(99, 66, 245, 1) 0%,
-  rgba(239, 125, 199, 1) 100%);
+  rgba(239, 125, 199, 1) 50%,
+  rgba(99, 66, 245, 1) 100%);
   background-position: 0% 0%;
   background-size: 200% 100%;
 }

@@ -420,7 +420,7 @@ export default {
 
       const { data } = await gf.gif(giphyID)
 
-      Nudify.addUrl(data.images.original.mp4)
+      Nudify.addUrl(data.images.original.mp4, { filename: `${giphyID}.mp4` })
 
       consola.track('UPLOAD_GIPHY')
       this.giphyURL = ''

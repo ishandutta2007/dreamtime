@@ -1,6 +1,6 @@
 {
   "name": "dreamtime",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "displayName": "DreamTime",
   "description": "The easiest to use application to create fake nudes from photos and videos.",
   "private": true,
@@ -25,7 +25,7 @@
     "build:nuxt": "yarn production nuxt generate",
     "build:babel": "yarn production babel electron/src -d electron/dist --minified",
     "build:electron": "yarn production electron-builder --publish=never --x64",
-    "build": "yarn run clean && yarn build:nuxt && yarn build:babel && yarn run optimize && yarn build:electron",
+    "build": "yarn run clean && yarn build:nuxt && yarn build:babel && yarn run build:env && yarn build:electron",
     "preview:electron": "env-cmd -e default,production,preview --no-override electron .",
     "preview:production": "yarn build:nuxt && yarn build:babel && yarn preview:electron"
   },

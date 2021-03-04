@@ -134,13 +134,15 @@ export class File extends EventEmitter {
    * Open a file from the Internet.
    * @param {string} url
    */
-  static async fromUrl(url, options = {}) {
+  static async fromUrl(url, options = {}, downloadOptions = {}) {
     consola.debug(`Downloading: ${url}`)
 
+    if (!downloadOptions.directory) {
+      downloadOptions.directory = getPath('temp')
+    }
+
     // Download the file in the temporary folder.
-    const filepath = await fs.downloadAsync(url, {
-      directory: getPath('temp'),
-    })
+    const filepath = await fs.downloadAsync(url, downloadOptions)
 
     return this.fromPath(filepath, options)
   }

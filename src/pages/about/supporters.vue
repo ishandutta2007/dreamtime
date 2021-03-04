@@ -98,6 +98,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes logoAnim {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
 .project__buttons {
   @apply mb-6;
 }
@@ -108,24 +122,51 @@ export default {
   }
 
   &::v-deep {
-    .is-gold {
-      .item__label {
-        @apply font-bold;
+    .is-gold .item__label {
+      color: #d5ad6d;
+    }
 
-        background: linear-gradient(transparent, transparent),
-          linear-gradient(to bottom, rgba(213, 173, 109, 1) 0%, rgba(213,
-          173,
-          109,
-          1)
-          26%, rgba(226, 186, 120, 1) 35%, rgba(163, 126, 67, 1) 45%, rgba(145,
-          112,
-          59,
-          1)
-          61%, rgba(213, 173, 109, 1) 100%);
-        background-clip: text;
-        color: #d5ad6d;
-        -webkit-text-fill-color: transparent;
-      }
+    .is-super-gold .item__label {
+      @apply text-lg;
+
+      background: #d5ad6d;
+      background: linear-gradient(10deg,
+  rgba(247, 202, 131) 0%,
+  rgba(247, 202, 131) 26%,
+  rgba(163, 126, 67, 1) 35%,
+  rgba(145, 112, 59, 1) 45%,
+  rgba(247, 202, 131)  61%,
+  rgba(247, 202, 131) 100%);
+      background-clip: text;
+      background-position: 0% 0%;
+      background-size: 200% 100%;
+      color: #d5ad6d;
+      -webkit-text-fill-color: transparent;
+
+      animation-name: logoAnim;
+      animation-timing-function: linear;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    .is-ultra-gold .item__label {
+      @apply text-lg;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+      background: rgb(99, 66, 245);
+      background: linear-gradient(10deg,
+      rgba(99, 66, 245, 1) 0%,
+      rgba(239, 125, 199, 1) 50%,
+      rgba(99, 66, 245, 1) 100%);
+      background-clip: text;
+      background-position: 0% 0%;
+      background-size: 200% 100%;
+      -webkit-text-fill-color: transparent;
+
+      animation-name: logoAnim;
+      animation-timing-function: linear;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
     }
   }
 }
