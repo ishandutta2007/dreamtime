@@ -1,11 +1,12 @@
 {
   "version": "1.6.0",
-  "description": "Application that uses artificial intelligence to generate fake nudes.",
+  "description": "The easiest to use application to create fake nudes from photos and videos.",
   "homepage": "https://www.dreamtime.tech",
   "license": "GPL-3.0",
   "architecture": {
     "64bit": {
-      "url": "https://downloads.dreamnet.tech/dreamtime/v1.6.0/windows/portable#/DreamTime-v1.6.0-windows-portable.zip"
+      "url": "https://downloads.dreamnet.tech/v2/dreamtime/v1.6.0/DreamTime-v1.6.0-windows-portable.zip?platform=windows&arch=portable",
+      "hash": "e8e60c89ebe27f2471640de35a0593c7fdd4c26e6e07a136a238b933a7303d09"
     }
   },
   "bin": "DreamTime.exe",
@@ -19,17 +20,16 @@
     "AppData"
   ],
   "checkver": {
-    "url": "https://raw.githubusercontent.com/dreamnettech/dreamtime/master/src/package.json",
-    "jp": "$.version"
+    "url": "https://downloads.dreamnet.tech/v2/dreamtime/latest.txt?public=1"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://downloads.dreamnet.tech/dreamtime/v$version/windows/portable#/DreamTime-v$version-windows-portable.zip"
+        "url": "https://downloads.dreamnet.tech/v2/dreamtime/v$version/DreamTime-v$version-windows-portable.zip?platform=windows&arch=portable"
       }
     },
     "hash": {
-      "url": "https://downloads.dreamnet.tech/dreamtime/v$version/windows/portable/checksum.sha256"
+      "url": "$baseurl/checksum.sha256"
     }
   }
 }

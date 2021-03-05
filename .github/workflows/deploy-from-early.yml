@@ -1,0 +1,66 @@
+name: Deploy from early
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+      password:
+        description: 'Release password'
+        required: false
+      sha:
+        description: 'Commit SHA'
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Install Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - uses: actions/checkout@v1
+
+      - uses: actions/cache@v2
+        env:
+          cache-name: setup-modules-01
+        with:
+          path: src/node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('src/yarn.lock') }}
+
+      - name: Install Dependencies
+        working-directory: src
+        run: yarn install --network-timeout 1000000
+
+      - name: Deploy
+        working-directory: src
+        timeout-minutes: 20
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.version }}
+          RELEASE_PASSWORD: ${{ github.event.inputs.password }}
+          DEPLOY_GIT_TARGET: ${{ github.event.inputs.sha }}
+          DEPLOY_GIT_REPO: dreamtime
+          DEPLOY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_GITHUB_OWNER: dreamnettech
+          DEPLOY_TEKNIK_TOKEN: ${{ secrets.DEPLOY_TEKNIK_TOKEN }}
+          DEPLOY_TEKNIK_OWNER: dreamnet
+          DEPLOY_MINIO_ADDRESS: /dns4/s3.dreamnet.tech/tcp/443/https
+          DEPLOY_MINIO_BUCKET: dreamtime
+          DEPLOY_MINIO_KEY: ${{ secrets.DEPLOY_MINIO_KEY }}
+          DEPLOY_MINIO_SECRET: ${{ secrets.DEPLOY_MINIO_SECRET }}
+          DEPLOY_MINIO_GATEWAY: https://s3.dreamnet.tech
+        run: yarn run cross-env NODE_ENV=production node scripts/deploy-from-early.js
+
+      - name: Install Snapcraft
+        uses: samuelmeuli/action-snapcraft@v1
+        with:
+          snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
+
+      - name: Deploy to Snapcraft
+        working-directory: dist
+        run: snapcraft upload *.snap
