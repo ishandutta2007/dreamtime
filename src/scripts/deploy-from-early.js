@@ -240,10 +240,10 @@ async function upload() {
 
     const release = new Release(filepath)
     await run(release)
-
-    // Print results
-    console.log(JSON.stringify(OUTPUT, null, 2))
   }
+
+  // Print results
+  console.log(JSON.stringify(OUTPUT, null, 2))
 }
 
 /**
