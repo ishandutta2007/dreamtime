@@ -220,17 +220,17 @@ async function run(release) {
     console.log(`❌ Pin to ${provider.label} failed: ${error.message}`)
   })
 
-  release.on('cache:begin', (url: string) => {
+  release.on('cache:begin', (url) => {
     const uri = new URL(url)
     console.log(`Caching to ${uri.hostname}...`)
   })
 
-  release.on('cache:fail', (error: Error, url: string) => {
+  release.on('cache:fail', (error, url) => {
     const uri = new URL(url)
     console.log(`❌ Cache to ${uri.hostname} failed: ${error.message}`)
   })
 
-  release.on('cache:success', (url: string) => {
+  release.on('cache:success', (url) => {
     const uri = new URL(url)
     console.log(`✔️ Cached to ${uri.hostname}`)
   })
