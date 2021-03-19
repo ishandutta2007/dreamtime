@@ -1,12 +1,12 @@
 {
-  "version": "1.6.0",
+  "version": "1.6.2",
   "description": "The easiest to use application to create fake nudes from photos and videos.",
   "homepage": "https://www.dreamtime.tech",
   "license": "GPL-3.0",
   "architecture": {
     "64bit": {
-      "url": "https://downloads.dreamnet.tech/v2/dreamtime/v1.6.0/DreamTime-v1.6.0-windows-portable.zip?platform=windows&arch=portable",
-      "hash": "e8e60c89ebe27f2471640de35a0593c7fdd4c26e6e07a136a238b933a7303d09"
+      "url": "https://downloads.dreamnet.tech/v2/dreamtime/v1.6.2/DreamTime-v1.6.2-windows-portable.7z?platform=windows&arch=portable",
+      "hash": "c62b4215a4f8d526bb15d8543de675111c9f9805c66fa193217a222ac4483e52"
     }
   },
   "bin": "DreamTime.exe",
@@ -25,7 +25,7 @@
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://downloads.dreamnet.tech/v2/dreamtime/v$version/DreamTime-v$version-windows-portable.zip?platform=windows&arch=portable"
+        "url": "https://downloads.dreamnet.tech/v2/dreamtime/v$version/DreamTime-v$version-windows-portable.7z?platform=windows&arch=portable"
       }
     },
     "hash": {
