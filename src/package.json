@@ -128,7 +128,7 @@
     "@babel/plugin-transform-regenerator": "^7.12.13",
     "@babel/preset-env": "7.12.13",
     "@dreamnet/app": "^1.1.1",
-    "@dreamnet/deploy": "^1.1.0",
+    "@dreamnet/deploy": "^1.2.1",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/fontawesome": "^1.1.2",

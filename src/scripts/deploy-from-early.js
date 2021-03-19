@@ -166,8 +166,8 @@ async function download() {
     for (const arch of ARCHS) {
       let FORMATS = ['']
 
-      if (platform === 'linux') {
-        FORMATS = ['', 'AppImage', 'rpm']
+      if (platform === 'linux' && arch.length === 0) {
+        FORMATS = ['snap', 'AppImage', 'rpm']
       }
 
       for (const format of FORMATS) {
@@ -196,8 +196,6 @@ async function download() {
  * @param {Release} release
  */
 async function run(release) {
-  release.addProvider(PROVIDERS)
-
   release.on('upload:begin', (provider) => {
     console.log(`Uploading to ${provider.label}...`)
   })
@@ -221,6 +219,24 @@ async function run(release) {
   release.on('pin:fail', (error, provider) => {
     console.log(`❌ Pin to ${provider.label} failed: ${error.message}`)
   })
+
+  release.on('cache:begin', (url: string) => {
+    const uri = new URL(url)
+    console.log(`Caching to ${uri.hostname}...`)
+  })
+
+  release.on('cache:fail', (error: Error, url: string) => {
+    const uri = new URL(url)
+    console.log(`❌ Cache to ${uri.hostname} failed: ${error.message}`)
+  })
+
+  release.on('cache:success', (url: string) => {
+    const uri = new URL(url)
+    console.log(`✔️ Cached to ${uri.hostname}`)
+  })
+
+  release.addProvider(PROVIDERS)
+  release.setCaching(true)
 
   const response = await release.deploy()
 
