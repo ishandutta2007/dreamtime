@@ -52,7 +52,7 @@ jobs:
 
       - uses: actions/cache@v2
         env:
-          cache-name: setup-modules-01
+          cache-name: setup-modules
         with:
           path: src/node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('src/yarn.lock') }}
