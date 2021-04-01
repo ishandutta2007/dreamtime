@@ -83,9 +83,11 @@ jobs:
   
   # Build Electron
   build-electron:
-    name: "Electron: ${{ matrix.type }} - ${{ matrix.target }} (${{ matrix.os }})"
+    name: "Electron (${{ matrix.os }} - ${{ matrix.target }} - ${{ matrix.type }})"
     needs: build-frontend
     runs-on: ${{ matrix.os }}
+    container:
+      image: ${{ matrix.image }}
 
     # Strategy
     # (variables for multiple platforms)
@@ -104,6 +106,10 @@ jobs:
           - target: rpm # Red Hat, Suse and Fedora Linux
             os: ubuntu-18.04
             type: installer
+          - target: pacman # Arch Linux
+            os: ubuntu-18.04
+            type: installer
+            image: archlinux:base-devel
 
     steps:
       - name: Install Node.js 14
