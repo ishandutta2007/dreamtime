@@ -78,7 +78,6 @@ const macos = {
   },
   dmg: {
     title: '${productName}',
-    backgroundColor: '#2E3440',
   },
 }
 
