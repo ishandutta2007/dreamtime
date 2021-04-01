@@ -86,8 +86,7 @@ jobs:
     name: "Electron (${{ matrix.os }} - ${{ matrix.target }} - ${{ matrix.type }})"
     needs: build-frontend
     runs-on: ${{ matrix.os }}
-    container:
-      image: ${{ matrix.image }}
+    container: ${{ matrix.image }}
 
     # Strategy
     # (variables for multiple platforms)
@@ -98,6 +97,7 @@ jobs:
         os: [windows-2019, ubuntu-18.04, macos-10.15]
         type: [installer, portable]
         target: [default]
+        image: [false]
 
         include:
           - target: AppImage # Linux: AppImage
