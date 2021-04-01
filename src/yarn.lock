@@ -10857,10 +10857,10 @@ ipfs@^0.54.4:
     semver "^7.3.2"
     update-notifier "^5.0.0"
 
-ipfsd-ctl@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/ipfsd-ctl/-/ipfsd-ctl-8.0.0.tgz#a880acc4ad36526561ec0454dd38bb7f3b73ff3e"
-  integrity sha512-SfmbpHYxuT0FsH424xGlYBLCgiMqUJ7XmtlFzMQaxG2H21tnys+A4HtzBJUuaZLvz3yGLAw4Kka1311T/+/aQA==
+ipfsd-ctl@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/ipfsd-ctl/-/ipfsd-ctl-7.2.0.tgz#1d2c25d9d348cb66e515240601d83a15cd7bbdcf"
+  integrity sha512-mBhrMVWz8QHQ/4P+3p0pBkeeV5R41t/6aHsu44gsvnt7JPqkDlNpjU6IpsRP9fw1OgCtsax6lz1n8BMixz9epw==
   dependencies:
     "@hapi/boom" "^9.1.0"
     "@hapi/hapi" "^20.0.0"

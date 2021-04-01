@@ -254,7 +254,9 @@ module.exports = {
       config.target = 'electron-renderer'
 
       //
-      config.output.publicPath = './assets/'
+      if (!isDev) {
+        config.output.publicPath = './assets/'
+      }
 
       // Source maps.
       config.devtool = 'source-map'

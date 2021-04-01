@@ -183,7 +183,7 @@ export async function downloadFromHttp(url, options, events, writeStream) {
 
   readStream.on('data', () => {
     events.emit('progress', {
-      progress: contentLength > 0 ? toNumber((writeStream.bytesWritten / contentLength) * 100).toFixed(2) : -1,
+      progress: contentLength > 0 ? toNumber(((writeStream.bytesWritten / contentLength) * 100).toFixed(2)) : -1,
       written: prettyBytes(writeStream.bytesWritten),
       total: contentLength > 0 ? prettyBytes(contentLength) : -1,
     })
@@ -261,7 +261,8 @@ export async function downloadFromIPFS(cid, options, events, writeStream) {
     logger.debug('Connecting to providers...')
 
     try {
-      await node.api.swarm.connect('/dns4/mariana.dreamnet.tech/tcp/4001/p2p/QmcWoy1FzBicbYuopNT2rT6EDQSBDfco1TxibEyYgWbiMq')
+      await node.api.swarm.connect('/dns4/amanari.dreamnet.tech/tcp/4001/p2p/12D3KooWAuvHjmNSAxekkpqp9c5Hgcht7JJcZjQDjGUuLvYUDLPe')
+      await node.api.swarm.connect('/dns4/valeria.dreamnet.tech/tcp/4001/p2p/12D3KooWLSBENgc42uWwhsppUaRFknmSjcYvEyN5qLFtgr1PbEQS')
     } catch (err) {
       logger.warn(err)
     }
@@ -305,7 +306,7 @@ export async function downloadFromIPFS(cid, options, events, writeStream) {
 
   readStream.on('data', () => {
     events.emit('progress', {
-      progress: toNumber((writeStream.bytesWritten / stats.CumulativeSize) * 100).toFixed(2),
+      progress: toNumber(((writeStream.bytesWritten / stats.CumulativeSize) * 100).toFixed(2)),
       written: prettyBytes(writeStream.bytesWritten),
       total: prettyBytes(stats.CumulativeSize),
     })
@@ -378,7 +379,7 @@ export function downloadFromTorrent(magnetURI, options, events, writeStream) {
 
   torrent.on('download', () => {
     events.emit('progress', {
-      progress: torrent.progress,
+      progress: toNumber(torrent.progress),
       written: prettyBytes(torrent.downloaded),
       total: prettyBytes(torrent.length),
     })
