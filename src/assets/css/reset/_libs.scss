@@ -63,7 +63,7 @@
 }
 
 .introjs-tooltip {
-  @apply bg-dark-500-90 #{!important};
+  @apply bg-dark-500 bg-opacity-90 #{!important};
   max-width: 400px !important;
   min-width: 350px !important;
 }

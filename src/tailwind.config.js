@@ -12,16 +12,18 @@ function darken(col, amount = 5) {
 //
 const theme = {
   night: {
-    light: '#353c4a', // UI elements like indent- and wrap guide marker
-    DEFAULT: '#2f3542', // selection- and text highlighting color
-    dark: '#292e39', // elevated, more prominent or focused UI elements
-    darker: '#20242d', // elements background
+    light: '#4C566A', // UI elements like indent- and wrap guide marker
+    DEFAULT: '#434C5E', // selection- and text highlighting color
+    dark: '#3B4252', // elevated, more prominent or focused UI elements
+    darker: '#2E3440', // elements background
   },
 
   snow: {
-    darker: '#D8DEE9',
-    dark: '#E5E9F0',
-    DEFAULT: '#ECEFF4',
+    darker: darken('#D8DEE9', 20),
+    dark: darken('#D8DEE9', 10),
+    DEFAULT: '#D8DEE9',
+    light: '#E5E9F0',
+    lighter: '#ECEFF4',
   },
 
   frost: {
@@ -84,7 +86,13 @@ module.exports = {
 
         night: theme.night,
 
-        background: '#191d24',
+        background: darken(theme.night.darker),
+
+        menus: {
+          light: lighten(theme.night.darker, 3),
+          DEFAULT: theme.night.darker,
+          dark: darken(theme.night.darker, 3),
+        },
 
         input: {
           light: lighten(theme.night.dark),
@@ -93,15 +101,9 @@ module.exports = {
         },
 
         button: {
-          light: lighten(theme.night.DEFAULT),
-          DEFAULT: theme.night.DEFAULT,
-          dark: darken(theme.night.DEFAULT),
-        },
-
-        menus: {
-          light: lighten(theme.night.darker),
-          DEFAULT: theme.night.darker,
-          dark: darken(theme.night.darker),
+          light: lighten(theme.night.dark),
+          DEFAULT: theme.night.dark,
+          dark: darken(theme.night.dark),
         },
 
         // Snow Storm
@@ -223,37 +225,14 @@ module.exports = {
 
     },
   },
-  variants: {},
-  plugins: [
-    require('tailwindcss-alpha')({
-      modules: {
-        borderColor: {
-          process: true,
-        },
-      },
-      alpha: {
-        10: 0.1,
-        20: 0.2,
-        30: 0.3,
-        40: 0.4,
-        50: 0.5,
-        60: 0.6,
-        70: 0.7,
-        80: 0.8,
-        90: 0.9,
-      },
-    }),
-  ],
   purge: {
     // https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: true,
     content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'modules/**/*.js',
-      'nuxt.config.js',
+      './components/**/*.{vue,js}',
+      './layouts/**/*.vue',
+      './pages/**/*.vue',
+      './plugins/**/*.{js,ts}',
+      './nuxt.config.{js,ts}',
     ],
   },
   corePlugins: {
