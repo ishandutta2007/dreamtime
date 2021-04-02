@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-
 const tailwind = require('./tailwind.config')
 
 const dev = process.env.NODE_ENV === 'development'
@@ -80,9 +79,9 @@ module.exports = {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [],
 
-  //
+  // https://go.nuxtjs.dev/tailwindcss
   tailwindcss: {
-    cssPath: '~/assets/css/tailwind.scss',
+    jit: true,
   },
 
   // https://github.com/nuxt-community/style-resources-module
@@ -96,7 +95,7 @@ module.exports = {
       Rubik: [400, 600, 700],
       Inter: [400, 600, 700],
     },
-    download: true,
+    download: process.env.NODE_ENV === 'production',
   },
 
   // https://github.com/nuxt-community/fontawesome-module
@@ -197,7 +196,18 @@ module.exports = {
   },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: [
+    '~/components/Dialogs',
+    '~/components/Form',
+    '~/components/Help',
+    '~/components/Layout',
+    '~/components/Nudify',
+    '~/components/Page',
+    '~/components/Queue',
+    '~/components/Settings',
+    '~/components/UI',
+    '~/components',
+  ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
@@ -210,11 +220,8 @@ module.exports = {
     // Enable cache of terser-webpack-plugin and cache-loader.
     cache,
 
-    // Enables Common CSS Extraction using Vue Server Renderer guidelines.
-    extractCSS: false,
-
     //
-    publicPath: '/assets/',
+    publicPath: './assets/',
 
     // Customize Babel configuration for JavaScript and Vue files.
     babel: {
@@ -241,21 +248,15 @@ module.exports = {
       extractComments: false, // default was LICENSES
     },
 
-    //
-    html: {
-      minify: {
-        minifyCSS: false,
-        minifyJS: false,
-      },
-    },
-
     // You can extend webpack config here.
     extend(config, { isDev }) {
       //
       config.target = 'electron-renderer'
 
       //
-      config.output.publicPath = './assets/'
+      if (!isDev) {
+        config.output.publicPath = './assets/'
+      }
 
       // Source maps.
       config.devtool = 'source-map'

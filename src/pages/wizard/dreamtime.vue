@@ -21,7 +21,7 @@
     <div class="project__content">
       <!-- Portable -->
       <div v-if="!$dreamtime.isPortable && isLinux" class="notification notification--warning">
-        <span class="icon"><font-awesome-icon icon="info-circle" /></span> Linux users: it is recommended to update {{ $dreamtime.name }} with Snap instead:<br><code class="block text-center font-bold">sudo snap refresh dreamtimetech</code>
+        <span class="icon"><font-awesome-icon icon="info-circle" /></span> Linux users: it is recommended to update {{ $dreamtime.name }} with Snap instead:<br><code class="block font-bold text-center">sudo snap refresh dreamtimetech</code>
       </div>
 
       <!-- CONNECTION ERROR -->
@@ -59,8 +59,17 @@
 <script>
 import { dreamtime } from '~/modules/updater'
 
+const { shell } = $provider.api
+
 export default {
   layout: 'wizard',
+
+  middleware({ redirect }) {
+    // HOTFIX: The DreamTime updater is outdated and does not work properly,
+    // for now we redirect the user to the website to download the latest version.
+    shell.openExternal('https://www.dreamtime.tech/docs/installation#releases')
+    redirect('/')
+  },
 
   computed: {
     updater() {

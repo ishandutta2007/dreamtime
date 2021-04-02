@@ -17,6 +17,18 @@ class Checkpoints {
       logo: 'https://link.dreamnet.tech/ipfs/QmWkpwjEq6YQLSud4pS8ChkdED4NZrup6fKirFXXXLFe9u?filename=deepnude.png',
       navigation: [],
     },
+    releases: {
+      '0.0.1': {
+        dreampower: {
+          minimum: 'v0.0.1',
+        },
+        urls: [
+          'https://downloads.dreamnet.tech/v2/checkpoints/v0.0.1/v0.0.1.zip?direct=1',
+          'https://gateway.pinata.cloud/ipfs/QmWgk943L8XqL86pT17WENaAuwtrSKqZQ23MhZSFAquyyi?filename=checkpoints.torrent',
+          'QmWqmagyqzsDdxGhJ3LGM3c88W6DhZYECeTrbhK9pDSuVP',
+        ],
+      },
+    },
   }
 
   updater = updater

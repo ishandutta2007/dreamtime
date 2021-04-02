@@ -57,11 +57,13 @@ if (IS_RELEASE) {
   if (process.env.NODE_ENV === 'development') {
     PROVIDERS.push('Minio')
   } else {
-    PROVIDERS.push('Minio', 'DreamLinkCluster', 'Pinata', 'MEGA')
+    PROVIDERS.push('Pinata', 'DreamLinkCluster', 'Minio')
 
     if (!IS_EARLY) {
       PROVIDERS.push('Github', 'Teknik')
     }
+
+    PROVIDERS.push('MEGA')
   }
 }
 
