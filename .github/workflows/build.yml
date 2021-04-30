@@ -84,7 +84,7 @@ jobs:
   
   # Build Electron
   build-electron:
-    name: "Electron: ${{ matrix.type }} - ${{ matrix.target }} (${{ matrix.os }})"
+    name: "Electron (${{ matrix.os }} - ${{ matrix.target }} - ${{ matrix.type }})"
     needs: build-frontend
     runs-on: ${{ matrix.os }}
 

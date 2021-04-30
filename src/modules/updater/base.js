@@ -9,7 +9,7 @@
 
 import {
   isNil, isArray, isPlainObject, isNumber, find,
-  startsWith, filter, isEmpty, toNumber, isString,
+  startsWith, filter, isEmpty, isString,
   endsWith, attempt,
 } from 'lodash'
 import axios from 'axios'
@@ -513,7 +513,7 @@ export class BaseUpdater {
         this._setUpdateProgress('downloading')
 
         if (isNumber(payload.progress)) {
-          this.update.progress = toNumber(payload.progress * 100).toFixed(2)
+          this.update.progress = payload.progress
         } else {
           this.update.progress = -1
         }

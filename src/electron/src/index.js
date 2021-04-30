@@ -27,8 +27,13 @@ const logger = Logger.create('electron')
 config.rootDir = dirname(dirname(__dirname))
 
 if (process.env.NODE_ENV !== 'development') {
-  // make sure that the working directory is where the executable is
-  process.chdir(getPath('exe', '..'))
+  if (process.platform === 'darwin') {
+    // We need this to detect .env on /Contents/
+    process.chdir(getAppPath())
+  } else {
+    // Make sure that the working directory is where the executable is
+    process.chdir(getPath('exe', '..'))
+  }
 }
 
 require('dotenv').config()
@@ -81,7 +86,8 @@ class DreamApp {
     })
 
     if (!process.env.BUILD_TARGET || !process.env.npm_package_displayName) {
-      throw new Error('This installation is corrupt, please contact the developers.')
+      AppError.handle(new Error('This installation is corrupt, please contact the developers.'))
+      return
     }
 
     // https://electronjs.org/docs/tutorial/notifications#windows

@@ -74,8 +74,8 @@ export class AppError extends Error {
 
   show() {
     dialog.showErrorBox(
-      this.options.title || 'A problem has occurred.',
-      `${this.message}\n\n<code>${this.options.error?.message}</code>`,
+      this.options.title || 'A problem has occurred!',
+      `${this.message}:\n\n${this.options.error?.message}`,
     )
   }
 
@@ -111,9 +111,8 @@ export class AppError extends Error {
         exception = new Error(error)
       }
 
-      appError = new AppError('The application has encountered an unexpected error.', {
+      appError = new AppError('The application has encountered an unexpected error', {
         error: exception,
-        title: 'Unexpected error!',
         level,
       })
     }

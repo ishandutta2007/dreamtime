@@ -71,14 +71,13 @@ const macos = {
     minimumSystemVersion: '10.15.0',
     extraResources: [
       {
-        from: 'node_modules/7zip-bin/mac',
+        from: 'node_modules/7zip-bin/mac/x64',
         to: '7zip-bin',
       },
     ],
   },
   dmg: {
     title: '${productName}',
-    backgroundColor: '#191d24',
   },
 }
 
