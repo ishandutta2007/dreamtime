@@ -57,7 +57,6 @@ module.exports = {
     '~/plugins/binds.js',
     '~/plugins/boot.js',
     '~/plugins/setup.js',
-    // '~/plugins/fontawesome.js',
     '~/plugins/vue-slider.js',
     '~/plugins/vue-portal.js',
   ],
@@ -69,7 +68,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/style-resources-module
     '@nuxtjs/style-resources',
     // https://github.com/nuxt-community/google-fonts-module
-    '@nuxtjs/google-fonts',
+    // '@nuxtjs/google-fonts',
     // https://github.com/nuxt-community/fontawesome-module
     '@nuxtjs/fontawesome',
     // https://marquez.co/docs/nuxt-optimized-images
@@ -79,17 +78,18 @@ module.exports = {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [],
 
-  // https://go.nuxtjs.dev/tailwindcss
-  tailwindcss: {
-    jit: true,
-  },
-
   // https://github.com/nuxt-community/style-resources-module
   styleResources: {
     scss: '~/assets/css/utilities/all.scss',
   },
 
+  // https://go.nuxtjs.dev/tailwindcss
+  tailwindcss: {
+    exposeConfig: true
+  },
+
   // https://github.com/nuxt-community/google-fonts-module
+  /*
   googleFonts: {
     families: {
       Rubik: [400, 600, 700],
@@ -97,6 +97,7 @@ module.exports = {
     },
     download: process.env.NODE_ENV === 'production',
   },
+  */
 
   // https://github.com/nuxt-community/fontawesome-module
   fontawesome: {
@@ -211,15 +212,6 @@ module.exports = {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    // Enable thread-loader in webpack building.
-    parallel: true,
-
-    // Enables the HardSourceWebpackPlugin for improved caching.
-    hardSource: cache,
-
-    // Enable cache of terser-webpack-plugin and cache-loader.
-    cache,
-
     //
     publicPath: './assets/',
 
@@ -270,24 +262,14 @@ module.exports = {
       // Worker loader.
       config.module.rules.push({
         test: /\.worker\.js$/,
-        use: {
-          loader: 'worker-loader',
-          options: {
-            filename: () => (isDev ? '[name].[ext]' : 'workers/[contenthash:7].[ext]'),
-          },
-        },
+        use: ['worker-loader'],
         exclude: /(node_modules)/,
       })
 
       // Media loader.
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: () => (isDev ? '[name].[ext]' : 'sounds/[contenthash:7].[ext]'),
-          },
-        },
+        use: ['file-loader'],
         exclude: /(node_modules)/,
       })
 

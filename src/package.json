@@ -29,13 +29,76 @@
     "preview:electron": "env-cmd -e default,production,preview --no-override electron .",
     "preview:production": "yarn build:nuxt && yarn build:babel && yarn preview:electron"
   },
+  "author": {
+    "name": "Ivan Bravo Bravo",
+    "email": "kolessios@gmail.com",
+    "url": "https://github.com/dreamnettech/dreamtime/graphs/contributors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamnettech/dreamtime.git",
+    "directory": "src"
+  },
+  "bugs": {
+    "email": "kolessios@gmail.com",
+    "url": "https://github.com/dreamnettech/dreamtime/issues"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
   "lint-staged": {
     "*.{js,vue}": "eslint --fix --ignore-path .gitignore"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "standard-version": {
+    "path": ".",
+    "tag-prefix": "v",
+    "releaseCommitMessageFormat": "chore(release): {{currentTag}}",
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "improvement",
+        "section": "Improvements"
+      },
+      {
+        "type": "docs",
+        "section": "Miscellaneous changes"
+      },
+      {
+        "type": "style",
+        "section": "Design"
+      },
+      {
+        "type": "refactor",
+        "section": "Miscellaneous changes"
+      },
+      {
+        "type": "perf",
+        "section": "Improvements"
+      },
+      {
+        "type": "test",
+        "hidden": true
+      },
+      {
+        "type": "chore",
+        "section": "Miscellaneous changes"
+      }
+    ]
   },
   "dependencies": {
     "7zip-bin": "^5.1.1",
@@ -170,29 +233,5 @@
     "sha256-file": "^1.0.0",
     "shx": "^0.3.3",
     "worker-loader": "^3.0.8"
-  },
-  "author": {
-    "name": "Ivan Bravo Bravo <kolessios>",
-    "email": "ivan@dreamnet.tech",
-    "url": "https://github.com/dreamnettech/dreamtime/graphs/contributors"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dreamnettech/dreamtime.git"
-  },
-  "bugs": {
-    "email": "ivan@dreamnet.tech",
-    "url": "https://github.com/dreamnettech/dreamtime/issues"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "os": [
-    "win32",
-    "darwin",
-    "linux"
-  ],
-  "cpu": [
-    "x64"
-  ]
+  }
 }
