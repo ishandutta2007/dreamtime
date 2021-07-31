@@ -7,16 +7,13 @@
 //
 // Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2019.
 
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '~/tailwind.config'
-
-const config = resolveConfig(tailwindConfig)
+import { theme } from '~/tailwind.config'
 
 export const blackTheme = {
   'common.bi.display': 'none',
   'common.bisize.display': 'none',
   'common.backgroundImage': 'none',
-  'common.backgroundColor': config.theme.colors.background,
+  'common.backgroundColor': theme.colors.background,
   'common.border': '0px',
 
   // header
@@ -43,8 +40,8 @@ export const blackTheme = {
   'menu.iconSize.height': '24px',
 
   // submenu primary color
-  'submenu.backgroundColor': config.theme.colors.dark[500],
-  'submenu.partition.color': config.theme.colors.dark[100],
+  'submenu.backgroundColor': theme.colors.dark[500],
+  'submenu.partition.color': theme.colors.dark[100],
 
   // submenu icons
   'submenu.normalIcon.path': './assets/images/svg/icon-d.svg',
