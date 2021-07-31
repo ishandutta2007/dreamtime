@@ -44,6 +44,7 @@ const theme = {
 
 // See DEFAULT config https://github.com/tailwindcss/tailwindcss/blob/master/stubs/DEFAULTConfig.stub.js
 module.exports = {
+  mode: 'jit',
   theme: {
     screens: {
       xl: { max: '2000px' },
@@ -224,16 +225,6 @@ module.exports = {
       },
 
     },
-  },
-  purge: {
-    // https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    content: [
-      './components/**/*.{vue,js}',
-      './layouts/**/*.vue',
-      './pages/**/*.vue',
-      './plugins/**/*.{js,ts}',
-      './nuxt.config.{js,ts}',
-    ],
   },
   corePlugins: {
     container: false,
