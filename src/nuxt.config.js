@@ -2,7 +2,6 @@
 const tailwind = require('./tailwind.config')
 
 const dev = process.env.NODE_ENV === 'development'
-const cache = false
 
 module.exports = {
   dev,
@@ -33,7 +32,7 @@ module.exports = {
     ],
     script: [
       {
-        src: 'https://ads.dreamnet.tech/delivery/asyncjs.php',
+        src: 'https://ads.opendreamnet.com/delivery/asyncjs.php',
         async: true,
       },
     ],
@@ -248,10 +247,10 @@ module.exports = {
       //
       if (!isDev) {
         config.output.publicPath = './assets/'
+      } else {
+        // Source maps.
+        config.devtool = 'source-map'
       }
-
-      // Source maps.
-      config.devtool = 'source-map'
 
       // Don't throw warning when asset created is over 250kb
       config.performance.hints = false
