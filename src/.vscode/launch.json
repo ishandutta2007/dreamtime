@@ -21,10 +21,14 @@
       "sourceMaps": true,
       "sourceMapPathOverrides": {
         "electron/dist/*": "${webRoot}/electron/src/*"
+      },
+      "env": {
+        "BUILD_TARGET": "nsis",
+        "npm_package_displayName": "DreamTime"
       }
     },
     {
-      "type": "chrome",
+      "type":"pwa-chrome",
       "request": "attach",
       "name": "Renderer Process",
       "port": 9223,
