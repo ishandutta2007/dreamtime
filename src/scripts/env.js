@@ -2,6 +2,7 @@ const { stringify } = require('envfile')
 const fs = require('fs')
 const { pickBy, identity, toString } = require('lodash')
 const { choice } = require('@dreamnet/app')
+const pkg = require('../package.json')
 
 // Normalize portable env
 if (process.env.BUILD_PORTABLE) {
@@ -48,7 +49,7 @@ if (!process.env.BUILD_FILENAME) {
     macos: 'macos',
   })
 
-  process.env.BUILD_FILENAME = `${process.env.npm_package_displayName}-v${process.env.npm_package_version}-${osname}-${process.env.BUILD_ARCH}.${process.env.BUILD_FORMAT}`
+  process.env.BUILD_FILENAME = `${pkg.displayName}-v${pkg.version}-${osname}-${process.env.BUILD_ARCH}.${process.env.BUILD_FORMAT}`
 }
 
 // Enviroment
@@ -73,20 +74,16 @@ const payload = pickBy({
   BUILD_FILENAME: process.env.BUILD_FILENAME,
 
   // package.json
-  npm_package_displayName: process.env.npm_package_displayName,
-  npm_package_version: process.env.npm_package_version,
-  npm_package_description: process.env.npm_package_description,
+  npm_package_displayName: pkg.displayName,
+  npm_package_version: pkg.version,
+  npm_package_description: pkg.description,
 }, identity)
 
 // Deploy script testing.
 if (process.env.NODE_ENV === 'development') {
   payload.DEPLOY_DREAMTRACK_HOST = 'http://127.0.0.1:30200'
   payload.DEPLOY_DREAMTRACK_KEY = 'changeme'
-  payload.GITHUB_REF = `refs/tags/v${process.env.npm_package_version}-early`
-  payload.DEPLOY_MINIO_ADDRESS = '/ip4/127.0.0.1/tcp/19000/http'
-  payload.DEPLOY_MINIO_BUCKET = 'dreamtime'
-  payload.DEPLOY_MINIO_KEY = 'root'
-  payload.DEPLOY_MINIO_SECRET = 'secret123'
+  payload.GITHUB_REF = `refs/tags/v${pkg.version}-early`
   payload.DEPLOY_PINATA_TOKEN = 'changeme'
 }
 
