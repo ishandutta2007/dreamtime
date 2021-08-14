@@ -1,33 +1,19 @@
 - title: DreamTime is an application for adults.
   photo: tos--adults
   content: |-
-    DreamTime creates adult-only photos, if you have not reached the legal age of your country please close and uninstall this application.
+    DreamTime is an application that uses artificial intelligence to create fake-nudes from photos, if you have not reached the legal age of your country please close and uninstall this application.
 
 - title: DreamTime is free and open-source.
   photo: tos--opensource
   content: |-
-    This application is completely free and its source code is available to the public.
-
-    Avoid falling for SCAMs or malware and ignore anyone who offers a premium/cracked version. 
-    
-    Always download DreamTime from the official website (www.dreamtime.tech) or access the early versions by following the instructions on the official website.
+    This application is completely free and its source code is available to the public. Avoid falling for SCAMs or malware and ignore anyone who offers a premium/cracked version.
 
 - title: Don't use DreamTime with malicious purposes.
   photo: tos--legal
   content: |-
     This application has been created exclusively for private, artistic or educational use as long as you have the permission of those involved.
 
-    **Malicious or illegal use is totally prohibited and may be punished under the laws of your country.**
-
-- title: Keep the photos private.
-  photo: tos--share
-  content: |-
-    We highly recommend that the fake nudes photos created with this application are maintained for private use unless you have permission from those involved.
-
-- title: DreamTime is under the GPL-3.0
-  photo: tos--license
-  content: |-
-    You can modify the application code and distribute it, but always under the same license and you must share the source code of your modifications.
+    **Malicious or illegal use is totally prohibited.**
 
 - title: Support us for more updates!
   photo: tos--love
