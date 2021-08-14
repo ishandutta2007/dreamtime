@@ -47,16 +47,8 @@ Visit the [Getting Started](https://dreamtime.tech/docs/development/getting-star
 
 ## Community
 
-- [Discussions](https://forum.dreamtime.tech)
-- [Chat](https://chat.dreamnet.tech)
-- [Twitter](https://twitter.com/DreamNetTechno)
-- [Facebook](https://web.facebook.com/DreamNetTechnology)
-
-## Supporting
-
-DreamTime is an open-source project that will be **free forever**. The project is kept in development thanks to the support of our incredible backers, you can also help keep the project alive in different ways:
-
-[![](https://img.shields.io/badge/%F0%9F%92%96-Support%20us-red?style=for-the-badge)](https://dreamtime.tech/docs/support/support-us)
+- [Discussions](https://github.com/dreamnettech/dreamtime/discussions)
+- [Twitter](https://twitter.com/opendreamnetdev)
 
 ## Sponsors
 
