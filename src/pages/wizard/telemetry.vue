@@ -19,7 +19,7 @@
 
       <AppBox title="Privacy" class="telemetry__notice" photo="telemetry__privacy">
         <p>
-          DreamNet respects your privacy, <strong>the photos you generate with DreamTime will not leave your computer in any way</strong>.
+          OpenDreamNet respects your privacy, <strong>the photos you create with DreamTime will not leave your computer in any way</strong>.
         </p>
 
         <p>

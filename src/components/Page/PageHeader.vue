@@ -28,7 +28,7 @@
     }
 
     .subtitle {
-      @apply font-thin;
+      
     }
 
     .tip {

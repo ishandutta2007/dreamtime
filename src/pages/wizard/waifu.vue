@@ -143,15 +143,6 @@
       <!-- Changelog -->
       <ProjectChangelog project="waifu" :limit="1" />
     </div>
-
-    <div class="wizard__footer">
-      <button v-if="!requirements.waifu.installed"
-              v-tooltip="'This component is optional.'"
-              class="button button--xl"
-              @click="skip">
-        Skip
-      </button>
-    </div>
   </div>
 </template>
 
