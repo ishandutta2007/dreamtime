@@ -8822,7 +8822,7 @@ __metadata:
     tinycolor: ^0.0.1
     tinycolor2: ^1.4.2
     tippy.js: ^6.3.1
-    tui-image-editor: 3.14.3
+    tui-image-editor: 3.15.0
     unique-names-generator: ^4.6.0
     unzipper: ^0.10.11
     urijs: ^1.19.7
@@ -24285,15 +24285,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"tui-image-editor@npm:3.14.3":
-  version: 3.14.3
-  resolution: "tui-image-editor@npm:3.14.3"
+"tui-image-editor@npm:3.15.0":
+  version: 3.15.0
+  resolution: "tui-image-editor@npm:3.15.0"
   dependencies:
     core-js-pure: ^3.6.4
     fabric: ^4.2.0
     tui-code-snippet: ^1.5.0
     tui-color-picker: ^2.2.6
-  checksum: 32b5d042b7571c609503eca4926735240e3929a5a849a7821f266d1a25a9349afef7fbe1e367d910c6f15f6049421f03c37b83e0db2f800a70aa48698cbb79a5
+  checksum: 066cda3ffc03494bdc159225e1ce3eea666697884c6e769cf16d595711022bf09671716180cb94e7c5218b33c0436c15c02456a8e9a5474054b1dd8fb6d40da5
   languageName: node
   linkType: hard
 
