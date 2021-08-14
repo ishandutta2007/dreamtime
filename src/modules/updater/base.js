@@ -200,7 +200,11 @@ export class BaseUpdater {
       return true
     }
 
-    return compareVersions.compare(this.latestCompatibleVersion, this.currentVersion, '>')
+    try {
+      return compareVersions.compare(this.latestCompatibleVersion, this.currentVersion, '>')
+    } catch (error) { 
+      return false
+    }
   }
 
   /**
