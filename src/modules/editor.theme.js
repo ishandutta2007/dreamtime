@@ -13,7 +13,7 @@ export const blackTheme = {
   'common.bi.display': 'none',
   'common.bisize.display': 'none',
   'common.backgroundImage': 'none',
-  'common.backgroundColor': theme.colors.background,
+  'common.backgroundColor': theme.extend.colors.background,
   'common.border': '0px',
 
   // header
@@ -40,8 +40,8 @@ export const blackTheme = {
   'menu.iconSize.height': '24px',
 
   // submenu primary color
-  'submenu.backgroundColor': theme.colors.dark[500],
-  'submenu.partition.color': theme.colors.dark[100],
+  'submenu.backgroundColor': theme.extend.colors.dark[500],
+  'submenu.partition.color': theme.extend.colors.dark[100],
 
   // submenu icons
   'submenu.normalIcon.path': './assets/images/svg/icon-d.svg',
