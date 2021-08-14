@@ -1,0 +1,31 @@
+diff --git a/node_modules/tui-image-editor/dist/tui-image-editor.js b/node_modules/tui-image-editor/dist/tui-image-editor.js
+index 10700b9..0e40655 100644
+--- a/node_modules/tui-image-editor/dist/tui-image-editor.js
++++ b/node_modules/tui-image-editor/dist/tui-image-editor.js
+@@ -22010,7 +22010,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
+ 
+ function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+ 
+-var DRAW_OPACITY = 0.7;
++var DRAW_OPACITY = 1.0;
+ 
+ /**
+  * Draw ui class
+@@ -22040,7 +22040,7 @@ var Draw = function (_Submenu) {
+ 
+     _this._els = {
+       lineSelectButton: _this.selector('.tie-draw-line-select-button'),
+-      drawColorPicker: new _colorpicker2.default(_this.selector('.tie-draw-color'), '#00a9ff', _this.toggleDirection, _this.usageStatistics),
++      drawColorPicker: new _colorpicker2.default(_this.selector('.tie-draw-color'), '#00FF00', _this.toggleDirection, _this.usageStatistics),
+       drawRange: new _range2.default({
+         slider: _this.selector('.tie-draw-range'),
+         input: _this.selector('.tie-draw-range-value')
+@@ -26251,7 +26251,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
+ 
+ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+ 
+-var PICKER_COLOR = ['#000000', '#2a2a2a', '#545454', '#7e7e7e', '#a8a8a8', '#d2d2d2', '#ffffff', '', '#ff4040', '#ff6518', '#ffbb3b', '#03bd9e', '#00a9ff', '#515ce6', '#9e5fff', '#ff5583'];
++var PICKER_COLOR = ['#00FF00', '#00CD00', '#FF0000', '#FFFFFF', '#FF00FF', '#0000FF', '#646464', '','#000000', '#2a2a2a', '#545454', '#7e7e7e', '#a8a8a8', '#d2d2d2', '#ffffff', '', '#ff4040', '#ff6518', '#ffbb3b', '#03bd9e', '#00a9ff', '#515ce6', '#9e5fff', '#ff5583'];
+ 
+ /**
+  * Colorpicker control class
