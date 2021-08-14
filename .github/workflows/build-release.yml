@@ -3,8 +3,10 @@ name: Release
 on:
   workflow_dispatch:
   push:
-    tags:
-      - v*
+    tags: [v*]
+
+env:
+  NODE_ENV: production 
 
 jobs:
   # Setup
@@ -18,23 +20,33 @@ jobs:
         os: [windows-2019, ubuntu-18.04, macos-10.15]
 
     steps:
-      - name: Install Node.js 14
-        uses: actions/setup-node@v1
+      - name: 📁 Checkout
+        uses: actions/checkout@v2
+
+      - name: 📦 Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: dreamtime-v1-cache
+        with:
+          path: |
+            node_modules
+            !node_modules/.cache
+            .yarn/cache
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-
+
+      - name: 🧰 Setup NodeJS
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
 
-      - uses: actions/checkout@v1
-
-      - uses: actions/cache@v2
-        env:
-          cache-name: setup-modules
-        with:
-          path: src/node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('src/yarn.lock') }}
-
-      - name: Install Dependencies
+      - name: 👨🏻‍💻 Install dependencies
         working-directory: src
-        run: yarn install --network-timeout 1000000
+        run: yarn install
 
   # Build frontend
   build-frontend:
@@ -43,29 +55,40 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - name: Install Node.js 14
-        uses: actions/setup-node@v1
+      - name: 📁 Checkout
+        uses: actions/checkout@v2
+
+      - name: 📦 Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: dreamtime-v1-cache
+        with:
+          path: |
+            node_modules
+            !node_modules/.cache
+            .yarn/cache
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-
+
+      - name: 🧰 Setup NodeJS
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
 
-      - uses: actions/checkout@v1
-
-      - uses: actions/cache@v2
-        env:
-          cache-name: setup-modules
-        with:
-          path: src/node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('src/yarn.lock') }}
-
-      - name: Build - Electron entry
+      - name: 🏗️ Build Electron
         working-directory: src
         run: yarn run build:babel
 
-      - name: Build - NuxtJS
+      - name: 🏗️ Build NuxtJS
         working-directory: src
         run: yarn run build:nuxt
 
-      - uses: actions/upload-artifact@v2
+      - name: ✨ Upload artifact
+        uses: actions/upload-artifact@v2
         with:
           name: dreamtime-dist
           path: |
@@ -97,26 +120,36 @@ jobs:
             type: installer
 
     steps:
-      - name: Install Node.js 14
-        uses: actions/setup-node@v1
+      - name: 📁 Checkout
+        uses: actions/checkout@v2
+
+      - name: 📦 Cache node_modules
+        uses: actions/cache@v2
+        env:
+          cache-name: dreamtime-v1-cache
+        with:
+          path: |
+            node_modules
+            !node_modules/.cache
+            .yarn/cache
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-
+
+      - name: 🧰 Setup NodeJS
+        uses: actions/setup-node@v2
         with:
           node-version: 14.x
-
-      - uses: actions/checkout@v1
-
-      - uses: actions/cache@v2
-        env:
-          cache-name: setup-modules
-        with:
-          path: src/node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('src/yarn.lock') }}
       
       - uses: actions/download-artifact@v2
         with:
           name: dreamtime-dist
           path: src
 
-      - name: Build ENV
+      - name: 🏗️ Build ENV
         working-directory: src
         env:
           GITHUB_SHA: ${{ github.sha }}
@@ -124,7 +157,7 @@ jobs:
           BUILD_TARGET: ${{ matrix.target }}
         run: yarn run build:env
 
-      - name: Build Electron
+      - name: 🏗️ Build Electron
         working-directory: src
         run: yarn run build:electron
 
@@ -140,7 +173,7 @@ jobs:
             dist/*.pacman
             dist/*.dmg
 
-      - name: Deploy
+      - name: 🚀 Deploy
         working-directory: src
         continue-on-error: true
         timeout-minutes: 20
@@ -162,12 +195,12 @@ jobs:
           DEPLOY_DREAMLINKCLUSTER_PASSWORD: ${{ secrets.DEPLOY_DREAMLINKCLUSTER_PASSWORD }}
         run: yarn run deploy
 
-      - name: Install Snapcraft
+      - name: 🐧 Install Snapcraft
         uses: samuelmeuli/action-snapcraft@v1
         with:
           snapcraft_token: ${{ secrets.SNAPCRAFT_TOKEN }}
 
-      - name: Deploy to Snapcraft
+      - name: 🚀 Deploy to Snapcraft
         if: matrix.os == 'ubuntu-18.04' && matrix.type == 'installer' && matrix.target == 'default'
         working-directory: dist
         run: snapcraft upload *.snap
