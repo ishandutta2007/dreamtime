@@ -56,7 +56,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
-          'Rubik',
           'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
@@ -71,14 +70,7 @@ module.exports = {
           'system-ui',
           'Arial',
           'sans-serif',
-        ],
-        serif: [
-          'Georgia',
-          'Cambria',
-          '"Times New Roman"',
-          'Times',
-          'serif',
-        ],
+        ]
       },
 
       // https://javisperez.github.io/tailwindcolorshades/
