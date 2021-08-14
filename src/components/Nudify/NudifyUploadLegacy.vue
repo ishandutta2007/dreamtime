@@ -74,7 +74,7 @@
 
     <!-- Checkpoints Updater -->
     <AppNotification v-if="checkpoints.available"
-                     class="notification notification--warning cursor-pointer"
+                     class="cursor-pointer notification notification--warning"
                      :name="`update-checkpoints-${checkpoints.latest.tag_name}`"
                      @click="$router.push('/wizard/checkpoints')">
       🎉 <strong>{{ checkpoints.displayName }} {{ checkpoints.latest.tag_name }}</strong> is available! Click here to update.
@@ -94,7 +94,7 @@
           </h3>
         </PageHeader>
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <input v-model="webAddress"
                  type="url"
                  class="input"
@@ -123,10 +123,10 @@
           </h3>
         </PageHeader>
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <input v-model="instagramPhoto"
                  type="url"
-                 class="input mb-2"
+                 class="mb-2 input"
                  placeholder="https://www.instagram.com/p/..."
                  data-private="lipsum">
 
@@ -160,7 +160,7 @@
           multiple
           @change="openFile">
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <button class="button"
                   @click.prevent="$refs.photo.click()">
             <span>OPEN</span>
@@ -184,7 +184,7 @@
           </h3>
         </PageHeader>
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <button class="button"
                   @click.prevent="openFolder">
             <span>OPEN FOLDER</span>
@@ -207,10 +207,10 @@
           </h3>
         </PageHeader>
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <input v-model="youtubeURL"
                  type="url"
-                 class="input mb-2"
+                 class="mb-2 input"
                  placeholder="https://www.youtube.com/watch?v=..."
                  data-private="lipsum">
 
@@ -236,10 +236,10 @@
           </h3>
         </PageHeader>
 
-        <div class="method__body text-center">
+        <div class="text-center method__body">
           <input v-model="giphyURL"
                  type="url"
-                 class="input mb-2"
+                 class="mb-2 input"
                  placeholder="https://giphy.com/gifs/..."
                  data-private="lipsum">
 
@@ -359,6 +359,10 @@ export default {
           'Unable to download the photo, please verify that the address is correct and that you are connected to the Internet.',
           error,
         )
+      }
+
+      if (!post.downloadUrl) {
+        throw new Warning('Upload failed.', 'This photo is private or Instagram has limited access to public photos from your IP. Please disable any VPN/Proxy or wait a few hours.')
       }
 
       Nudify.addUrl(post.downloadUrl)
