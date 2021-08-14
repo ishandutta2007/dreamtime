@@ -159,6 +159,7 @@ jobs:
 
       - name: 🏗️ Build Electron
         working-directory: src
+        timeout-minutes: 10
         run: yarn run build:electron
 
       - uses: actions/upload-artifact@v2
