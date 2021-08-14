@@ -261,8 +261,8 @@ export async function downloadFromIPFS(cid, options, events, writeStream) {
     logger.debug('Connecting to providers...')
 
     try {
-      await node.api.swarm.connect('/dns4/amanari.dreamnet.tech/tcp/4001/p2p/12D3KooWAuvHjmNSAxekkpqp9c5Hgcht7JJcZjQDjGUuLvYUDLPe')
-      await node.api.swarm.connect('/dns4/valeria.dreamnet.tech/tcp/4001/p2p/12D3KooWLSBENgc42uWwhsppUaRFknmSjcYvEyN5qLFtgr1PbEQS')
+      await node.api.swarm.connect('/dnsaddr/node1.dreamlink.cloud/tcp/4001/p2p/12D3KooWAuvHjmNSAxekkpqp9c5Hgcht7JJcZjQDjGUuLvYUDLPe')
+      await node.api.swarm.connect('/dnsaddr/node2.dreamlink.cloud/tcp/4001/p2p/12D3KooWLSBENgc42uWwhsppUaRFknmSjcYvEyN5qLFtgr1PbEQS')
     } catch (err) {
       logger.warn(err)
     }

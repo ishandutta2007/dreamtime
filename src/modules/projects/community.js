@@ -2,25 +2,11 @@ import { dreamtrack } from '../services'
 
 class Community {
   data = {
-    name: 'DreamNet',
+    name: 'OpenDreamNet',
     slogan: 'Adult entertainment and decentralized applications to combat censorship.',
-    logo: 'https://link.dreamnet.tech/ipfs/QmbLPEHFGaPss2Dcc7Ea3oJw2VyjahZbMRUG3pzvoqCp2S?filename=dreamnet-logo-512x512.png',
+    logo: 'https://fs.dreamlink.cloud/ipfs/QmbLPEHFGaPss2Dcc7Ea3oJw2VyjahZbMRUG3pzvoqCp2S?filename=dreamnet-logo-512x512.png',
     navigation: [
-      {
-        icon: 'globe',
-        href: 'https://dreamnet.tech',
-        label: 'Website',
-      },
-      {
-        icon: 'comments',
-        href: 'https://chat.dreamnet.tech',
-        label: 'Chat',
-      },
-      {
-        icon: 'users',
-        href: 'https://forum.dreamnet.tech',
-        label: 'Forum',
-      },
+      
     ],
     sections: [],
     support: [
@@ -62,7 +48,7 @@ class Community {
   }
 
   get logo() {
-    return this.data.logo || 'https://link.dreamnet.tech/ipfs/QmbLPEHFGaPss2Dcc7Ea3oJw2VyjahZbMRUG3pzvoqCp2S?filename=dreamnet-logo-512x512.png'
+    return this.data.logo || 'https://fs.dreamlink.cloud/ipfs/QmbLPEHFGaPss2Dcc7Ea3oJw2VyjahZbMRUG3pzvoqCp2S?filename=dreamnet-logo-512x512.png'
   }
 
   async init() {

@@ -60,7 +60,7 @@
 
           <template #footer>
             <div class="box__footer">
-              <a href="https://link.dreamnet.tech/ipfs/QmaUaQafgSGVZzEncJnuQRhN6iugbbrVhnpSfSW4CqWL5q"
+              <a href="https://fs.dreamlink.cloud/ipfs/QmaUaQafgSGVZzEncJnuQRhN6iugbbrVhnpSfSW4CqWL5q"
                  target="_blank"
                  class="button button--info">Example</a>
             </div>

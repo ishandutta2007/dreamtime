@@ -84,7 +84,7 @@ export default {
   methods: {
     showCliError(item) {
       if (!item) {
-        throw new Warning('Unknown error!', 'The algorithm has been interrupted by an unknown problem. Please visit our <a href="https://chat.dreamnet.tech" target="_blank">chat</a> for support, we may ask you for the photo/video and the text below to fix the problem.', new Error('Im a bug! 🐞'))
+        throw new Warning('Unknown error!', 'The algorithm has been interrupted by an unknown problem.', new Error('Im a bug! 🐞'))
       }
 
       throw new Warning(item.title || 'Unknown error!', item.message, new Error('Im a bug! 🐞'))

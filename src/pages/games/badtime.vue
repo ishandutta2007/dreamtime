@@ -16,7 +16,7 @@
         <menu-item
           label="Open in Browser"
           icon="external-link-square-alt"
-          href="https://badtime.dreamnet.tech" />
+          href="https://fs.dreamlink.cloud/ipfs/QmYbskXAohbuF8THskQyTFut7nrRvvaUwCr2J4rujYcoN6/" />
 
         <menu-item
           label="Source code"
@@ -27,7 +27,7 @@
 
     <iframe
       id="badtime"
-      src="https://link.dreamnet.tech/ipfs/QmYbskXAohbuF8THskQyTFut7nrRvvaUwCr2J4rujYcoN6/"
+      src="https://fs.dreamlink.cloud/ipfs/QmYbskXAohbuF8THskQyTFut7nrRvvaUwCr2J4rujYcoN6/"
       name="badtime"
       scrolling="no"
       frameborder="0"

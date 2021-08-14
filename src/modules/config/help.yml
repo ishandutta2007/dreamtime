@@ -130,10 +130,8 @@
 - title: Technical support.
   photo: support
   buttons:
-    - text: Go to chat
-      href: https://chat.dreamnet.tech
-    - text: More contact options
-      href: https://dreamtime.tech/docs/support/feedback
+    - text: Contact
+      href: https://www.opendreamnet.com/contact
   summary: |-
     Something not working? Have you found a bug? Use our chat or communicate with a developer.
   content: |-

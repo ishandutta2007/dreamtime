@@ -135,11 +135,6 @@
     "message": "The file may be corrupt or has been deleted."
   },
   {
-    "query": "NoneType",
-    "title": "File Error",
-    "message": "🔥 You have run into a known issue which we have little information. Would you like to help fix it? Share the original photo with a developer in our <a href=\"https://chat.dreamnet.tech\" target=\"_blank\">chat</a>. 🔥"
-  },
-  {
     "query": "for argument 'src'",
     "title": "File Error",
     "message": "The file may be corrupt, has been deleted or you need to use the crop/overlay tool again."

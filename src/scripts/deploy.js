@@ -7,7 +7,7 @@
 // it under the terms of the GNU General Public License 3.0 as published by
 // the Free Software Foundation. See <https://www.gnu.org/licenses/gpl-3.0.html>
 //
-// Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2020.
+// Written by Ivan Bravo Bravo <ivan@opendreamnet.com>, 2020.
 
 const path = require('path')
 const fs = require('fs')
@@ -136,7 +136,7 @@ async function deploy({ cid }, response, checksum) {
 
     records.push({
       ...defs,
-      url: `https://link.dreamnet.tech/ipfs/${cid}?filename=${process.env.BUILD_FILENAME}`,
+      url: `https://fs.dreamlink.cloud/ipfs/${cid}?filename=${process.env.BUILD_FILENAME}`,
       priority: 25,
     })
 
@@ -162,7 +162,7 @@ async function deploy({ cid }, response, checksum) {
     let priority = 1
     let is_direct = true
 
-    if (data.url.includes('s3.dreamnet.tech') || data.url.includes('X-Amz-Algorithm')) {
+    if (data.url.includes('s3.opendreamnet.com') || data.url.includes('X-Amz-Algorithm')) {
       priority = 30
     } else if (data.url.includes('git.teknik.io')) {
       priority = 15

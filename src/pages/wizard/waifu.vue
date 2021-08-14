@@ -35,7 +35,7 @@
           <span>INTERNAL ERROR!</span>
         </h5>
 
-        {{ $dreamtime.name }} has not been able to verify that {{ $waifu.name }} works correctly, please fix this issue before continuing. Visit <a href="#" target="_blank">the website</a> with the most common problems or our <a href="https://chat.dreamnet.tech" target="_blank">chat</a> for technical support.
+        {{ $dreamtime.name }} has not been able to verify that {{ $waifu.name }} works correctly, please fix this issue before continuing.
         <br><br>
 
         <pre>{{ requirements.waifu.error.stack }}</pre>

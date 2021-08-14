@@ -13,7 +13,7 @@ class Waifu {
     about: {
       title: 'Waifu2X',
       description: 'Image upscaling & denoise algorithm.',
-      logo: 'https://link.dreamnet.tech/ipfs/QmR1gB7FUmheEEYQM2NpBHSYULQU3JtgpXBwiUfkcfZsy5?filename=waifu2x-logo.png',
+      logo: 'https://fs.dreamlink.cloud/ipfs/QmR1gB7FUmheEEYQM2NpBHSYULQU3JtgpXBwiUfkcfZsy5?filename=waifu2x-logo.png',
       navigation: [
         {
           icon: ['fab', 'github'],

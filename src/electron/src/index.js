@@ -5,7 +5,7 @@
 // it under the terms of the GNU General Public License 3.0 as published by
 // the Free Software Foundation. See <https://www.gnu.org/licenses/gpl-3.0.html>
 //
-// Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2019.
+// Written by Ivan Bravo Bravo <ivan@opendreamnet.com>, 2019.
 
 import { startsWith, debounce } from 'lodash'
 import {
@@ -202,7 +202,7 @@ class DreamApp {
           return
         }
 
-        if (url.host === 'github.com' || url.host === 'dreamnet.tech' || url.host === 'dreamtime.tech' || url.host === 'dreamcore.tech') {
+        if (url.host === 'github.com' || url.host === 'opendreamnet.com' || url.host === 'dreamtime.tech') {
           // Probably come from the changelog, we open in the browser.
           event.preventDefault()
           shell.openExternal(navigationUrl)

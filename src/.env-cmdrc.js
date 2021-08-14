@@ -15,8 +15,8 @@ module.exports = {
   },
   "production": {
     "NODE_ENV": "production",
-    "DREAMTRACK_HOST": "track.dreamnet.tech",
-    "DOWNLOADS_API": "https://downloads.dreamnet.tech"
+    "DREAMTRACK_HOST": "track.opendreamnet.com",
+    "DOWNLOADS_API": "https://d.opendreamnet.com"
   },
   "test": {
     "NODE_ENV": "test",

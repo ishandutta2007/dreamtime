@@ -5,7 +5,7 @@
   "license": "GPL-3.0",
   "architecture": {
     "64bit": {
-      "url": "https://downloads.dreamnet.tech/v2/dreamtime/v1.6.2/DreamTime-v1.6.2-windows-portable.7z?platform=windows&arch=portable",
+      "url": "https://d.opendreamnet.com/v2/dreamtime/v1.6.2/DreamTime-v1.6.2-windows-portable.7z?platform=windows&arch=portable",
       "hash": "c62b4215a4f8d526bb15d8543de675111c9f9805c66fa193217a222ac4483e52"
     }
   },
@@ -20,12 +20,12 @@
     "AppData"
   ],
   "checkver": {
-    "url": "https://downloads.dreamnet.tech/v2/dreamtime/latest.txt?public=1"
+    "url": "https://d.opendreamnet.com/v2/dreamtime/latest.txt?public=1"
   },
   "autoupdate": {
     "architecture": {
       "64bit": {
-        "url": "https://downloads.dreamnet.tech/v2/dreamtime/v$version/DreamTime-v$version-windows-portable.7z?platform=windows&arch=portable"
+        "url": "https://d.opendreamnet.com/v2/dreamtime/v$version/DreamTime-v$version-windows-portable.7z?platform=windows&arch=portable"
       }
     },
     "hash": {

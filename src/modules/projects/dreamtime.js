@@ -13,19 +13,13 @@ class DreamTime {
     about: {
       title: process.env.npm_package_displayName,
       description: process.env.npm_package_description,
-      logo: 'https://link.dreamnet.tech/ipfs/QmQi3xmEi4trvitGzps1k4XJwwUnWikPo4iowG3BJzHJqQ?filename=dreamtime-logo-512x512.png',
+      logo: 'https://fs.dreamlink.cloud/ipfs/QmQi3xmEi4trvitGzps1k4XJwwUnWikPo4iowG3BJzHJqQ?filename=dreamtime-logo-512x512.png',
       navigation: [
         {
           icon: 'star',
-          href: 'https://time.dreamnet.tech',
+          href: 'https://dreamtime.tech',
           label: 'Website',
-        },
-        {
-          icon: 'comment',
-          href: 'https://time.dreamnet.tech/docs/support/feedback',
-          label: 'Feedback',
-          description: 'Help us improve DreamTime!',
-        },
+        }
       ],
     },
   }

@@ -5,7 +5,7 @@
 // it under the terms of the GNU General Public License 3.0 as published by
 // the Free Software Foundation. See <https://www.gnu.org/licenses/gpl-3.0.html>
 //
-// Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2020.
+// Written by Ivan Bravo Bravo <ivan@opendreamnet.com>, 2020.
 
 import { isNil } from 'lodash'
 import Ws from '@adonisjs/websocket-client/index'
@@ -45,8 +45,8 @@ export class DreamTrackService extends BaseService {
    * @type {string}
    */
   get host() {
-    const host = process.env.DREAMTRACK_HOST || 'track.dreamnet.tech'
-    const protocol = host === 'track.dreamnet.tech' ? 'wss' : 'ws'
+    const host = process.env.DREAMTRACK_HOST || 'track.opendreamnet.com'
+    const protocol = host === 'track.opendreamnet.com' ? 'wss' : 'ws'
 
     return `${protocol}://${host}`
   }

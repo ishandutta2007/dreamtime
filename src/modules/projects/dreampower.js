@@ -14,13 +14,9 @@ class DreamPower {
     about: {
       title: 'DreamPower',
       description: 'Deep learning algorithm to create fake nudes.',
-      logo: 'https://link.dreamnet.tech/ipfs/QmXNNcW85FC2QQcrBEsk88Ahs6na9D5q72cm3pJAEg857A?filename=dreampower-logo-512x512.png',
+      logo: 'https://fs.dreamlink.cloud/ipfs/QmXNNcW85FC2QQcrBEsk88Ahs6na9D5q72cm3pJAEg857A?filename=dreampower-logo-512x512.png',
       navigation: [
-        {
-          icon: 'star',
-          href: 'https://power.dreamnet.tech',
-          label: 'Website',
-        },
+        
       ],
     },
   }

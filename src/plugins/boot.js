@@ -8,7 +8,7 @@
 // it under the terms of the GNU General Public License 3.0 as published by
 // the Free Software Foundation. See <https://www.gnu.org/licenses/gpl-3.0.html>
 //
-// Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2019.
+// Written by Ivan Bravo Bravo <ivan@opendreamnet.com>, 2019.
 
 import Vue from 'vue'
 import dayjs from 'dayjs'

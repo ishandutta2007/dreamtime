@@ -6,7 +6,7 @@
 // it under the terms of the GNU General Public License 3.0 as published by
 // the Free Software Foundation. See <https://www.gnu.org/licenses/gpl-3.0.html>
 //
-// Written by Ivan Bravo Bravo <ivan@dreamnet.tech>, 2019.
+// Written by Ivan Bravo Bravo <ivan@opendreamnet.com>, 2019.
 
 import {
   isNil, isEmpty, forIn, cloneDeep, random, toString,
@@ -742,7 +742,7 @@ export class PhotoRun {
       }
     }
 
-    return new Exception(title, 'The algorithm has been interrupted by an unknown problem. Please visit our <a href="https://chat.dreamnet.tech" target="_blank">chat</a> for support, we may ask you for the photo/video and the text below to fix the problem.', new Error(errorMessage), extra)
+    return new Exception(title, 'The algorithm has been interrupted by an unknown problem.', new Error(errorMessage), extra)
   }
 
   /**

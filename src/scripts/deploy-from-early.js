@@ -32,7 +32,7 @@ const OUTPUT = []
 
 //
 const http = axios.create({
-  baseURL: `https://downloads.dreamnet.tech/v2/dreamtime/${process.env.RELEASE_VERSION}`,
+  baseURL: `https://d.opendreamnet.com/v2/dreamtime/${process.env.RELEASE_VERSION}`,
   params: {
     password: process.env.RELEASE_PASSWORD,
   },
