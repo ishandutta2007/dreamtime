@@ -55,9 +55,9 @@ const PROVIDERS = []
 
 if (IS_RELEASE) {
   if (process.env.NODE_ENV === 'development') {
-    PROVIDERS.push('Minio')
+
   } else {
-    PROVIDERS.push('Pinata', 'DreamLinkCluster', 'Minio')
+    PROVIDERS.push('Pinata')
 
     if (!IS_EARLY) {
       PROVIDERS.push('Github', 'Teknik')

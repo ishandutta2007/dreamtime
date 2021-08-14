@@ -49,11 +49,6 @@ jobs:
           DEPLOY_GITHUB_OWNER: dreamnettech
           DEPLOY_TEKNIK_TOKEN: ${{ secrets.DEPLOY_TEKNIK_TOKEN }}
           DEPLOY_TEKNIK_OWNER: dreamnet
-          DEPLOY_MINIO_ADDRESS: /dns4/s3.dreamnet.tech/tcp/443/https
-          DEPLOY_MINIO_BUCKET: dreamtime
-          DEPLOY_MINIO_KEY: ${{ secrets.DEPLOY_MINIO_KEY }}
-          DEPLOY_MINIO_SECRET: ${{ secrets.DEPLOY_MINIO_SECRET }}
-          DEPLOY_MINIO_GATEWAY: https://s3.dreamnet.tech
         run: yarn run cross-env NODE_ENV=production node scripts/deploy-from-early.js
 
       - name: Install Snapcraft

@@ -1,4 +1,4 @@
-name: Build Release
+name: Release
 
 on:
   workflow_dispatch:
@@ -140,14 +140,14 @@ jobs:
             dist/*.pacman
             dist/*.dmg
 
-      - name: Deploy to Storage
+      - name: Deploy
         working-directory: src
         continue-on-error: true
         timeout-minutes: 20
         env:
           GITHUB_SHA: ${{ github.sha }}
           GITHUB_REF: ${{ github.ref }}
-          DEPLOY_DREAMTRACK_HOST: https://track.dreamnet.tech
+          DEPLOY_DREAMTRACK_HOST: https://track.opendreamnet.com
           DEPLOY_DREAMTRACK_KEY: ${{ secrets.DREAMTRACK_KEY }}
           DEPLOY_ENCRYPT_KEY: ${{ secrets.DEPLOY_ENCRYPT_KEY }}
           DEPLOY_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -158,11 +158,6 @@ jobs:
           DEPLOY_MEGA_EMAIL: ${{ secrets.DEPLOY_MEGA_EMAIL }}
           DEPLOY_MEGA_PASSWORD: ${{ secrets.DEPLOY_MEGA_PASSWORD }}
           DEPLOY_MEGA_FOLDER: /Projects/DreamTime/Releases/
-          DEPLOY_MINIO_ADDRESS: /dns4/s3.dreamnet.tech/tcp/443/https
-          DEPLOY_MINIO_BUCKET: dreamtime
-          DEPLOY_MINIO_KEY: ${{ secrets.DEPLOY_MINIO_KEY }}
-          DEPLOY_MINIO_SECRET: ${{ secrets.DEPLOY_MINIO_SECRET }}
-          DEPLOY_MINIO_GATEWAY: https://s3.dreamnet.tech
           DEPLOY_DREAMLINKCLUSTER_USERNAME: dreamnet
           DEPLOY_DREAMLINKCLUSTER_PASSWORD: ${{ secrets.DEPLOY_DREAMLINKCLUSTER_PASSWORD }}
         run: yarn run deploy
