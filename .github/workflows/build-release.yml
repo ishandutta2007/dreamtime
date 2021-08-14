@@ -25,17 +25,16 @@ jobs:
 
       - name: 📦 Cache node_modules
         uses: actions/cache@v2
-        working-directory: src
         env:
           cache-name: dreamtime-v1-cache
         with:
           path: |
-            node_modules
-            !node_modules/.cache
-            .yarn/cache
-            .yarn/unplugged
-            .yarn/build-state.yml
-            .yarn/install-state.gz
+            src/node_modules
+            !src/node_modules/.cache
+            src/.yarn/cache
+            src/.yarn/unplugged
+            src/.yarn/build-state.yml
+            src/.yarn/install-state.gz
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-
@@ -65,12 +64,12 @@ jobs:
           cache-name: dreamtime-v1-cache
         with:
           path: |
-            node_modules
-            !node_modules/.cache
-            .yarn/cache
-            .yarn/unplugged
-            .yarn/build-state.yml
-            .yarn/install-state.gz
+            src/node_modules
+            !src/node_modules/.cache
+            src/.yarn/cache
+            src/.yarn/unplugged
+            src/.yarn/build-state.yml
+            src/.yarn/install-state.gz
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-
@@ -130,12 +129,12 @@ jobs:
           cache-name: dreamtime-v1-cache
         with:
           path: |
-            node_modules
-            !node_modules/.cache
-            .yarn/cache
-            .yarn/unplugged
-            .yarn/build-state.yml
-            .yarn/install-state.gz
+            src/node_modules
+            !src/node_modules/.cache
+            src/.yarn/cache
+            src/.yarn/unplugged
+            src/.yarn/build-state.yml
+            src/.yarn/install-state.gz
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-${{ env.cache-name }}-
