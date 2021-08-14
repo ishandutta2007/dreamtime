@@ -25,6 +25,7 @@ jobs:
 
       - name: 📦 Cache node_modules
         uses: actions/cache@v2
+        working-directory: src
         env:
           cache-name: dreamtime-v1-cache
         with:
