@@ -234,7 +234,7 @@ export default {
     @apply text-2xl text-white font-semibold;
 
     span {
-      @apply text-primary-500 font-bold;
+      @apply text-primary font-bold;
       cursor: help;
     }
   }
@@ -263,7 +263,7 @@ export default {
     }
 
     &::-webkit-progress-value {
-      @apply bg-primary-500;
+      @apply bg-primary;
       border-radius: 9px;
     }
   }

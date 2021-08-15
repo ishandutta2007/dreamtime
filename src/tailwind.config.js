@@ -122,52 +122,19 @@ module.exports = {
         danger: {
           light: lighten(theme.aurora.red),
           DEFAULT: theme.aurora.red,
-          dark: darken(theme.aurora.red),
-
-          400: lighten(theme.aurora.red),
-          500: theme.aurora.red,
-          600: darken(theme.aurora.red),
-
-          100: '#FEECEB',
-          200: '#FCD0CD',
-          300: '#FBB4AF',
-          700: '#922820',
-          800: '#6E1E18',
-          900: '#491410',
+          dark: darken(theme.aurora.red)
         },
 
         success: {
           light: lighten(theme.aurora.green),
           DEFAULT: theme.aurora.green,
           dark: darken(theme.aurora.green),
-
-          400: lighten(theme.aurora.green),
-          500: theme.aurora.green,
-          600: darken(theme.aurora.green),
-
-          100: '#EEF8ED',
-          200: '#D5EDD1',
-          300: '#BCE3B5',
-          700: '#346E2A',
-          800: '#275320',
-          900: '#1A3715',
         },
 
         warning: {
           light: lighten(theme.aurora.yellow),
           DEFAULT: theme.aurora.yellow,
           dark: darken(theme.aurora.yellow),
-
-          400: lighten(theme.aurora.yellow),
-          500: theme.aurora.yellow,
-          600: darken(theme.aurora.yellow),
-
-          100: '#F9F2E8',
-          200: '#F0DEC5',
-          300: '#E6CBA2',
-          700: '#744A0D',
-          800: '#57380A',
-          900: '#3A2507',
         },
 
         //
@@ -203,21 +170,11 @@ module.exports = {
         },
 
         primary: {
-          100: '#E5A667',
-          200: '#E19A51',
-          300: '#DD8D3C',
-          400: '#DA8126',
-          500: '#de9041',
           light: lighten('#7db8e8', 10),
           DEFAULT: '#7db8e8',
-          dark: darken('#7db8e8', 10),
-          600: '#C36A0F',
-          700: '#AF5F0E',
-          800: '#9C550C',
-          900: '#894A0B',
+          dark: darken('#7db8e8', 10)
         },
       },
-
     },
   },
   corePlugins: {

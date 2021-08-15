@@ -1,11 +1,11 @@
 <template>
   <div class="nav">
     <div class="nav__left">
-      <button v-tooltip="'Go back'" class="nav__item nav__item--button text-2xl" @click="$router.go(-1)">
+      <button v-tooltip="'Go back'" class="text-2xl nav__item nav__item--button" @click="$router.go(-1)">
         <font-awesome-icon icon="caret-left" />
       </button>
 
-      <button v-tooltip="'Go forward'" class="nav__item nav__item--button text-2xl" @click="$router.go(1)">
+      <button v-tooltip="'Go forward'" class="text-2xl nav__item nav__item--button" @click="$router.go(1)">
         <font-awesome-icon icon="caret-right" />
       </button>
     </div>
@@ -103,15 +103,15 @@ export default {
 <style lang="scss" scoped>
 @keyframes alertAnim {
   0% {
-    @apply text-danger-500;
+    @apply text-danger;
   }
 
   50% {
-    @apply text-warning-500;
+    @apply text-warning;
   }
 
   100% {
-    @apply text-danger-500;
+    @apply text-danger;
   }
 }
 
@@ -182,7 +182,7 @@ export default {
 }
 
 .layout__navbar {
-  @apply flex bg-dark-500 z-10;
+  @apply flex bg-black z-10;
   @apply border-b border-dark-100;
   grid-area: nav;
   height: 50px;
@@ -209,13 +209,13 @@ export default {
 
     &:not(.navbar__item--home) {
       &.nuxt-link-active {
-        @apply text-primary-500;
+        @apply text-primary;
       }
     }
 
     &.navbar__item--home {
       &.nuxt-link-exact-active {
-        @apply text-primary-500;
+        @apply text-primary;
       }
     }
   }
@@ -228,7 +228,7 @@ export default {
     }
 
     &.nuxt-link-active {
-      @apply text-primary-500;
+      @apply text-primary;
     }
   }
 }
@@ -241,6 +241,6 @@ export default {
 }
 
 .alerts--ok {
-  @apply text-success-500;
+  @apply text-success;
 }
 </style>

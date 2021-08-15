@@ -59,7 +59,7 @@
 }
 
 .vue-slider-process {
-  @apply bg-primary-500 #{!important};
+  @apply bg-primary #{!important};
 }
 
 .introjs-tooltip {
@@ -81,7 +81,7 @@
 }
 
 .tippy-content {
-  @apply px-6 py-3 bg-primary text-black shadow-lg;
+  @apply p-3 bg-primary text-black shadow-lg;
 
   p:not(:last-child) {
     @apply mb-3;

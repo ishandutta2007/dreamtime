@@ -189,10 +189,10 @@ export default {
     width: 50px;
 
     &:hover {
-      @apply bg-dark-800;
+      @apply bg-night-darker;
 
       &.close {
-        @apply bg-danger-500;
+        @apply bg-danger-dark text-black;
       }
     }
   }

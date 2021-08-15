@@ -23,7 +23,7 @@
   }
 
   &.notification--warning {
-    @apply bg-warning-400 text-black;
+    @apply bg-warning text-black;
 
     code {
       @apply bg-warning-dark;
