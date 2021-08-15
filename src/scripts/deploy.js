@@ -14,7 +14,7 @@ const fs = require('fs')
 const axios = require('axios')
 const sha256File = require('sha256-file')
 const uuid = require('uuid')
-const { Release } = require('@dreamnet/deploy')
+const { Release } = require('@opendreamnet/deploy')
 const { choice } = require('@dreamnet/app')
 
 require('dotenv').config()
