@@ -19,27 +19,33 @@ const theme = {
   },
 
   snow: {
-    darker: darken('#D8DEE9', 20),
-    dark: darken('#D8DEE9', 10),
+    darker: '#82858c',
+    dark: '#adb2ba',
     DEFAULT: '#D8DEE9',
     light: '#E5E9F0',
-    lighter: '#ECEFF4',
+    lighter: '#ECEFF4'
   },
 
   frost: {
-    green: '#8FBCBB', // stand out and get more visual attention
-    cyan: '#88C0D0', // primary UI elements with main usage purposes
+    green: '#9fc6c5', // stand out and get more visual attention
+    cyan: '#94c4d1', // primary UI elements with main usage purposes
     gray: '#81A1C1', // secondary UI elements that also require more visual attention than other elements
-    blue: '#5E81AC', // tertiary UI elements that require more visual attention
+    blue: '#94afd1' // tertiary UI elements that require more visual attention
   },
 
   aurora: {
-    red: '#BF616A', // errors
-    orange: '#D08770', // rarely used for UI elements
-    yellow: '#EBCB8B', // warnings
+    red: '#f0a8af', // errors
+    orange: '#d99e8c', // rarely used for UI elements
+    yellow: '#f0d8a8', // warnings
     green: '#A3BE8C', // success
-    pink: '#B48EAD', // rarely used for UI elements
+    pink: '#c2a3bc' // rarely used for UI elements
   },
+
+  primary: {
+    light: lighten('#7db8e8', 10),
+    DEFAULT: '#7db8e8',
+    dark: darken('#7db8e8', 10)
+  }
 }
 
 // See DEFAULT config https://github.com/tailwindcss/tailwindcss/blob/master/stubs/DEFAULTConfig.stub.js
@@ -76,23 +82,19 @@ module.exports = {
       // https://javisperez.github.io/tailwindcolorshades/
       colors: {
         // Polar Night
-
         night: theme.night,
-
-        background: darken(theme.night.darker),
+        background: '#242933',
 
         menus: {
           light: lighten(theme.night.darker, 3),
           DEFAULT: theme.night.darker,
           dark: darken(theme.night.darker, 3),
         },
-
         input: {
           light: lighten(theme.night.dark),
           DEFAULT: theme.night.dark,
           dark: darken(theme.night.dark),
         },
-
         button: {
           light: lighten(theme.night.dark),
           DEFAULT: theme.night.dark,
@@ -206,9 +208,9 @@ module.exports = {
           300: '#DD8D3C',
           400: '#DA8126',
           500: '#de9041',
-          light: lighten('#de9041'),
-          DEFAULT: '#de9041',
-          dark: darken('#de9041'),
+          light: lighten('#7db8e8', 10),
+          DEFAULT: '#7db8e8',
+          dark: darken('#7db8e8', 10),
           600: '#C36A0F',
           700: '#AF5F0E',
           800: '#9C550C',
