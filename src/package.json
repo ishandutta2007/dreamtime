@@ -27,7 +27,8 @@
     "build:electron": "yarn production electron-builder build --publish=never --x64",
     "build": "yarn run clean && yarn build:nuxt && yarn build:babel && yarn run build:env && yarn build:electron",
     "preview:electron": "env-cmd -e default,production,preview --no-override electron .",
-    "preview:production": "yarn build:nuxt && yarn build:babel && yarn preview:electron"
+    "preview:production": "yarn build:nuxt && yarn build:babel && yarn preview:electron",
+    "release": "standard-version"
   },
   "author": {
     "name": "Ivan Bravo Bravo",
@@ -232,6 +233,7 @@
     "sass-loader": "^10.1.1",
     "sha256-file": "^1.0.0",
     "shx": "^0.3.3",
+    "standard-version": "^9.3.1",
     "worker-loader": "^3.0.8"
   }
 }
