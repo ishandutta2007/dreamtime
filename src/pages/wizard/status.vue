@@ -1,15 +1,24 @@
 <template>
-  <div class="status">
+  <div class="tos">
     <PageHeader>
       <h2 class="title">
-        <span class="icon"><font-awesome-icon icon="rocket" /></span>
-        <span>Status</span>
+        <span class="icon"><font-awesome-icon icon="magic" /></span>
+        <span>Setup Wizard</span>
       </h2>
 
       <h3 class="subtitle">
-        Verify that everything is in good condition for nudification.
+        Make sure you can run {{ $dream.name }} before proceeding.
       </h3>
     </PageHeader>
+
+    <div v-if="hasAlert" class="notification notification--warning">
+      <h5>
+        <span class="icon"><font-awesome-icon icon="exclamation-triangle" /></span>
+        <span>WARNING!</span>
+      </h5>
+      
+      <p>You may not be able to run {{ $dream.name }} correctly.</p>
+    </div>
 
     <!-- RAM -->
     <AppBox class="requirement">
@@ -73,33 +82,11 @@
       </div>
     </AppBox>
 
-    <hr class="mb-6">
-
-    <PageHeader>
-      <h2 class="title">
-        <span>Other recommendations</span>
-      </h2>
-    </PageHeader>
-
-    <AppBox title="Special characters" class="requirement">
-      <div class="requirement__description">
-        <p>The DreamTime algorithm often fails to work with directories or files whose names have special characters, this happens commonly in operating systems whose language is different from English.</p>
-
-        <p>Please make sure to install DreamTime and work only with paths that do not contain special characters.</p>
-      </div>
-    </AppBox>
-
-    <AppBox title="Disk space" class="requirement">
-      <div class="requirement__description">
-        <p>As much fun as it is to nudify non-stop some people forget how little storage they have left, this and permission issues are the number one cause of problems when nudifying. Constantly check your disk space!</p>
-      </div>
-    </AppBox>
-
-    <AppBox title="RTX 3000" class="requirement">
-      <div class="requirement__description">
-        <p>Support for the new NVIDIA graphics cards is still in the experimental phase. Slow processing speed and errors are to be expected in both DreamPower and Waifu2X.</p>
-      </div>
-    </AppBox>
+    <div class="wizard__footer">
+      <button class="button button--xl" @click="next">
+        Continue
+      </button>
+    </div>
   </div>
 </template>
 
@@ -110,6 +97,8 @@ import { requirements } from '~/modules/system'
 const { system } = $provider
 
 export default {
+  layout: 'wizard',
+
   filters: {
     bytes(value) {
       return prettyBytes(value)
@@ -124,6 +113,18 @@ export default {
   computed: {
     usingGPU() {
       return this.$settings.preferences.advanced.device === 'GPU' && system.primaryGpu
+    },
+
+    hasAlert() {
+      if (!requirements.recommended.ram) {
+        return true
+      }
+
+      if (!requirements.recommended.vram && this.$settings.processing.device === 'GPU') {
+        return true
+      }
+
+      return !requirements.folders.models
     },
 
     ramStatus() {
@@ -168,12 +169,19 @@ export default {
       }
     },
   },
+
+  methods: {
+    next() {
+      this.$settings.wizard.welcome = true
+      this.$router.push('/wizard/tos')
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.status {
-
+.tos {
+  @apply pb-6;
 }
 
 .requirement {

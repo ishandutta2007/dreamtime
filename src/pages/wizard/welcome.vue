@@ -42,8 +42,7 @@ export default {
 
   methods: {
     next() {
-      this.$settings.wizard.welcome = true
-      this.$router.push('/wizard/tos')
+      this.$router.push('/wizard/status')
     },
   },
 }
