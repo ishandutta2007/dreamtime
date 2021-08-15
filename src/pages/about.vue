@@ -19,7 +19,7 @@
           href="/about/waifu" />
 
         <MenuItem
-          label="DreamNet"
+          label="OpenDreamNet"
           :icon="$community.logo"
           href="/about/dreamnet" />
 

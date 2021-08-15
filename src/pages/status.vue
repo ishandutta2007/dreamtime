@@ -38,7 +38,7 @@
       <div class="requirement__status" :class="vramStatus" />
 
       <div class="requirement__description">
-        <h4>+6 GB of VRAM</h4>
+        <h4>+6 GB of dedicated VRAM</h4>
         <h5>Your graphics card has <b>{{ (system.primaryGpu.vram * 1000000) | bytes }}</b> of VRAM</h5>
 
         <p v-if="requirements.recommended.vram">
@@ -72,10 +72,6 @@
         </p>
       </div>
     </AppBox>
-
-    <p class="mb-6">
-      Visit the <a href="https://dreamtime.tech/docs/support/feedback" target="_blank" class="text-primary">help channels</a> for technical assistance. 🙂
-    </p>
 
     <hr class="mb-6">
 
