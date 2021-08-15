@@ -362,7 +362,7 @@ export default {
       }
 
       if (!post.downloadUrl) {
-        throw new Warning('Upload failed.', 'This photo is private or Instagram has limited access to public photos from your IP. Please disable any VPN/Proxy or wait a few hours.')
+        throw new Warning('Upload failed.', 'This photo is private or Instagram has restricted access to public photos from your IP. Please disable any VPN/Proxy or wait a few hours.')
       }
 
       Nudify.addUrl(post.downloadUrl)
