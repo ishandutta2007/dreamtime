@@ -87,7 +87,7 @@ export default {
         return
       }
 
-      const id = dreamtrack.get('ads.id', '3fe087377ab3999f9bd455cef8976f0b')
+      const id = dreamtrack.get('ads.id', 'da3c97985547acea7ead96b8b6c3890c')
 
       if (!window.reviveAsync[id]) {
         return
