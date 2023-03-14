@@ -35,6 +35,14 @@
   <img src="https://img.shields.io/github/license/dreamnettech/dreamtime" />
 </p>
 
+## ⚠️ Project discontinued.
+
+Thank you for your interest in DreamTime. Unfortunately we have discontinued the project and will focus our efforts on other projects, if you are interested in a better nudification algorithm that can be used from any device visit our new project:
+
+https://www.sukebezone.com/
+
+We have taken the decision to archive the repository since no PR has been received for more than 1 year.
+
 ## Download
 
 [Download the latest version of DreamTime here!](https://dreamtime.tech/docs/installation)
