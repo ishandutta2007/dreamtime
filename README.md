@@ -11,55 +11,46 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/dreamnettech/dreamtime/actions">
-    <img src="https://github.com/dreamnettech/dreamtime/workflows/Build/badge.svg" />
-  </a>
   <a href="https://github.com/dreamnettech/dreamtime/releases">
     <img src="https://img.shields.io/github/downloads/dreamnettech/dreamtime/total?logo=github&logoColor=white" />
   </a>
   <a href="https://snapcraft.io/dreamtimetech">
     <img alt="dreamtimetech" src="https://snapcraft.io/dreamtimetech/badge.svg" />
   </a>
-</p>
-
-<p align="center">
-  <a target="_blank" href="https://www.codacy.com/app/kolessios/dreamtime?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dreamnettech/dreamtime&amp;utm_campaign=Badge_Grade">
-    <img src="https://api.codacy.com/project/badge/Grade/0ecb8ba6eeae42e7bfd0d414d1bacee1" />
-  </a>
-  <a target="_blank" href="https://codeclimate.com/github/private-dreamnet/dreamtime/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/8d325515768f221e235f/maintainability" />
-  </a>
-  <a href="https://depfu.com/github/dreamnettech/dreamtime?project_id=23457">
-    <img src="https://badges.depfu.com/badges/4630226819e0a1962858e5dea59ef52e/overview.svg">
-  </a>
   <img src="https://img.shields.io/github/license/dreamnettech/dreamtime" />
 </p>
 
-## ⚠️ Project discontinued.
+## Discontinued
 
-Thank you for your interest in DreamTime. Unfortunately we have discontinued the project and will focus our efforts on other projects, if you are interested in a better nudification algorithm that can be used from any device visit our new project:
+Thank you for your interest in DreamTime, unfortunately the project has been discontinued and therefore will no longer receive updates. You can still download it for free!
 
-https://www.sukebezone.com/
+We invite you to try SukebeZone+, our latest alternative available for any device with a web browser:
 
-We have taken the decision to archive the repository since no PR has been received for more than 1 year.
+https://www.sukebezone.com
 
 ## Download
 
-[Download the latest version of DreamTime here!](https://dreamtime.tech/docs/installation)
+Visit the [Releases](https://github.com/dreamnettech/dreamtime/releases) page to download the file for your platform.
 
-You can also visit the [Releases](https://github.com/dreamnettech/dreamtime/releases) page.
+## Installation
 
-## Development
+- Install DreamTime with the installer or by extracting the files from the portable version.
+- DreamTime incorporates an automatic component installer that depending on several factors may not work, if that is the case, then you will need to download and install the following:
+  - [DreamPower](https://github.com/sukebenet/dreampower/releases)
+    - `-any.7z`: If you have an NVIDIA GPU.
+    - Extract files in: %APPDATA%/dreamtime/dreampower (or similar location for your platform. For the portable version it is in the “AppData” folder located in the folder where you extracted DreamTime.)
+  - [Checkpoints](https://github.com/sukebenet/deepnude-checkpoints/releases)
+    - Extract files in: %APPDATA%/dreamtime/dreampower/checkpoints (or similar location for your platform. For the portable version it is in the “AppData” folder located in the folder where you extracted DreamTime.)
+  - [Waifu2X](https://github.com/sukebenet/waifu2x-chainer/releases) (Optional)
+    - `-any.7z`: If you have an NVIDIA GPU.
+    - Extract files in: %APPDATA%/dreamtime/waifu2x (or similar location for your platform. For the portable version it is in the “AppData” folder located in the folder where you extracted DreamTime.)
+- You can now use the application!
 
-Visit the [Getting Started](https://dreamtime.tech/docs/development/getting-started) page to start hacking DreamTime. 👩‍💻
+## Notes
 
-## Community
-
-- [Discussions](https://github.com/dreamnettech/dreamtime/discussions)
-- [Twitter](https://twitter.com/opendreamnetdev)
-
-## Sponsors
-
-🥰 Support this project by becoming a sponsor. Your logo will show up here and in the about section of our apps, with a link to your website. 
-
-[[Become a sponsor](https://www.patreon.com/join/dreamnet/checkout?rid=4426478)]
+- The following functions are no longer functional since we shut down the servers:
+  - Telemetry
+  - "Show Ads"
+  - Share photo preferences
+  - Some photo/video downloaders
+- DreamTime has always focused on privacy, photos and actions within the application are not sent anywhere, everything works within your device.
